@@ -1,25 +1,21 @@
-import math
+height = float(input("Enter your height in cm: "))
+h = height / 100  # convert to meters
 
-height = int(input("Enter your height in cm: "))
+weight = float(input("Enter your weight in kg: "))
 
-h = height / 100
+bmi = round(weight / h ** 2, 2)
 
-weight = int(input("Enter your weight in kg: "))
-
-bmi = math.ceil((weight / h ** 2)*100) / 100
-
-
-print("Your BMI is: ", bmi)
+print("\nYour BMI is:", bmi)
 
 if bmi < 18.5:
-    v = "Under weight"
-elif bmi >= 18.5 and bmi < 25:
+    v = "Underweight"
+elif 18.5 <= bmi < 25:
     v = "Healthy weight"
-elif bmi >= 25 and bmi < 30:
+elif 25 <= bmi < 30:
     v = "Overweight"
-elif bmi >= 30 and bmi < 40:
-    v = "a Fat!"
+elif 30 <= bmi < 40:
+    v = "Obese"
 else:
-    v = "in Danger!!!"
+    v = "In Danger!"
 
-print("You are", v)
+print("Category:", v)
